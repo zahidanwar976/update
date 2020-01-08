@@ -21,23 +21,16 @@ class Mymodel extends Model
         protected $validationMessages = [];
         protected $skipValidation     = true;
 
-        public function getdata(){
-       
-       return $this->findall();
-                     // ->where(['id' => $id])
-         // $this->db->where('status','pending');
-   /* $query = $this->db->get($table)->result();
-    return $query;*/
-	 }
-	// public function remove($id){
-	
-		// $var = new Mymodel();
-		// $var->where('id', 12)->delete();
-		// $var->delete($id);
+        
+     public function getupdate($id){
+       // $query = /$this->where('id',$id);
+        // print_r($query);exit();
+          // return  $this->get('task2'); 
 
-	// 
-    /* public function update($id){
-        }*/
+          $query = $this->get_where('task2',array('id'=>$id));
+          return $query; 
+     }
+
 }
 
 ?>

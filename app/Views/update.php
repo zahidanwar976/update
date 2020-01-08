@@ -102,31 +102,28 @@
 </head>
 <body>
 <div class="signup-form">
-    <form method="post" action="<?php echo base_url()?>/Mycontroller/update">
- 		<?php
- 		foreach ($user as $value) {
- 		?>
-		<h2>Register</h2>
+    <form method="post" action="<?= base_url('Mycontroller/update'); ?>">
+ 		
+		<h2>Edit</h2>
 		<!-- <p class="hint-text">Create your account. It's free and only takes a minute.</p> -->
         <div class="form-group">
 			<div class="row">
-				<input type="hidden" name="id">
-				<div><input type="text" class="form-control" name="username" placeholder="First Name" required="required" value="<?php echo $value['username'] ?>"></div>
+				<input type="hidden" name="id" value="<?= $user['id']?>">
+				<div><input type="text" class="form-control" name="username" placeholder="First Name" required="required" value="<?= $user['username'] ?>"></div>
 			</div>        	
         </div>
         <div class="form-group">
-        	<input type="email" class="form-control" name="email" placeholder="Email" required="required" value="<?php echo $value['email'] ?>">
+        	<input type="email" class="form-control" name="email" placeholder="Email" required="required" value="<?= $user['email'] ?>">
         </div>
 		<div class="form-group">
-            <input type="password" class="form-control" name="password" placeholder="Password" required="required" value="<?php echo $value['passowrd'] ?>">
+            <input type="password" class="form-control" name="password" placeholder="Password" value="">
         </div>        
        <!--  <div class="form-group">
 			<label class="checkbox-inline"><input type="checkbox" required="required"> I accept the <a href="#">Terms of Use</a> &amp; <a href="#">Privacy Policy</a></label>
 		</div> -->
 		<div class="form-group">
-            <button type="submit" class="btn btn-success btn-lg btn-block">Register Now</button>
+            <button type="submit" class="btn btn-success btn-lg btn-block">Save</button>
         </div>
-   <?php } ?>
     </form>
 	<!-- <div class="text-center">Already have an account? <a href="#">Sign in</a></div> -->
 </div>
